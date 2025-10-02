@@ -45,3 +45,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }
   );
 });
+
+// Hamburger menu toggle
+document.getElementById('hamburger').addEventListener('click', function() {
+  const navList = document.querySelector('#navbar ul');
+  navList.classList.toggle('active');
+});
