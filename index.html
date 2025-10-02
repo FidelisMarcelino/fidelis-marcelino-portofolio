@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">Fidelis Marcelino</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm Fidelis Marcelino</h1>
+                    <p class="title">Front End Developer & Web Designer</p>
+                    <p>I craft beautiful, responsive websites and web applications that deliver exceptional user experiences. Passionate about clean code and modern design.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                        <a href="#projects" class="btn btn-outline">View Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-circle">
+                        <img src="Image/Fidelis Marcelino.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-avatar">
+                        <img src="Image/Fidelis Marcelino.png" alt="" class="programming">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Passionate Developer, Creative Thinker</h3>
+                    <p>I design beautiful and responsive websites and web applications that deliver an exceptional user experience, driven by a passion for clean code and modern design. 
+                    </p>
+                    <p>As a fifth semester Computer Science student, I bring <span>strong adaptability, teamwork, and leadership</span> experience as Chief Internal Officer at the Bina Nusantara Computer Club (BNCC).
+                    </p>
+                    <p>Dedicated to developing impactful digital solutions as a <span>Front-End Developer</span>, I am passionate about applying my technical and organizational skills in designing projects that promote collaboration, scalability, and user-oriented design.</p>
+                    <!-- <div class="social-links">
+                        <a href="#" class="social-link">💼</a>
+                        <a href="#" class="social-link">🐙</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React JS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design & Styling</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Google Workspace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/CAteriNgz.png" alt="" style="width: 90%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/FidelisMarcelino/CAteriNgz" target="_blank" class="project-link">🔗</a>
+                            <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>CAteriNgz | 2024</h3>
+                        <h4>UI/UX Designer & Front-End Developer</h4>
+                        <p>A fully responsive online catering platform offering a variety of delicious meal packages, equipped with user authentication for a personalized experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/PuddingFest.png" alt="" style="width: 90%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/FidelisMarcelino/FinalProjectLnTFE" target="_blank" class="project-link">🔗</a>
+                            <a href="https://fidelismarcelino.github.io/FinalProjectLnTFE/" target="_blank" class="project-link">🐙</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>PuddingFest Event | 2024</h3>
+                        <h4>UI/UX Designer & Front-End Developer</h4>
+                        <p>PuddingFest is a responsive event website that features event summaries, the history of the event, and a timeline of activities to provide an intuitive user experience.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/WorldUniversity.png" alt="" style="width: 90%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/FidelisMarcelino/WorldUniversity" target="_blank" class="project-link">🔗</a>
+                            <a href="https://world-university-gold.vercel.app/" target="_blank" class="project-link">🐙</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>World University | 2025</h3>
+                        <h4>UI/UX Designer & Front-End Developer</h4>
+                        <p>World University is a responsive web application built with React JavaScript and Tailwind CSS that provides comprehensive data on all countries around the world.</p>
+                        <div class="project-tags">
+                            <span class="tag">React JS</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/BOS 2024.png" alt="" style="width: 80%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://www.instagram.com/technoscapebncc/" target="_blank" class="project-link">🔗</a>
+                            <!-- <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a> -->
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>BNCC Opening Season 2024</h3>
+                        <h4>Staff Design & Documentation Division</h4>
+                        <p>BNCC Opening Season 2024 is a creative project where I created Instagram content and motion graphics using Adobe After Effects to create a cohesive and attractive visual identity for the event.</p>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Adobe After Effect</span>
+                            <span class="tag">Adobe Premiere Pro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/TechnoScape 2025.png" alt="" style="width: 80%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://www.instagram.com/technoscapebncc/" target="_blank" class="project-link">🔗</a>
+                            <!-- <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a> -->
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>TechnoScape 2025</h3>
+                        <h4>Vice Coordinator Design & Documentation Division | UI/UX Designer</h4>
+                        <p>TechnoScape 2025 is a creative project where I designed the website, Instagram content, and motion graphics using Adobe After Effects to create a cohesive and appealing visual identity for the events.</p>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Adobe After Effect</span>
+                            <span class="tag">Adobe Premiere Pro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Image/Weather App.png" alt="" style="width: 90%; border-radius: 4px;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/FidelisMarcelino/WeatherApp" target="_blank" class="project-link">🔗</a>
+                            <a href="https://weather-app-two-blue-jym558wp3q.vercel.app/" target="_blank" class="project-link">🐙</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App | 2025</h3>
+                        <h4>UI/UX Designer & Front-End Developer</h4>
+                        <p>Weather App is a responsive web application built with React JavaScript and Tailwind CSS that provides real-time global weather data and forecasts. It features current weather conditions, hourly predictions, and three-day forecasts, offering users clear and accessible insights into upcoming weather patterns.</p>
+                        <div class="project-tags">
+                            <span class="tag">React JS</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">My Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3>Project Manager & UI/UX Designer</h3>
+                        <div class="experience-company">readopt</div>
+                        <div class="experience-period">2025 - Present</div>
+                        <p class="experience-description">As a Project Manager and UI/UX Designer, I led the development and maintenance of a used book marketplace website by ensuring smooth team collaboration so that every feature could be released on time. I design and implement new user-focused features to enhance comfort and engagement, while optimizing the existing code base for greater efficiency and scalability. This role combines strategic planning, creative design, and technical problem-solving to deliver an intuitive user experience and reliable system performance.</p>
+                    </div>
+                    <div class="experience-dot"></div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3>Chief Internal Officer</h3>
+                        <div class="experience-company">BNCC</div>
+                        <div class="experience-period">2024-2025</div>
+                        <p class="experience-description">As Chief Internal Officer at BNCC, I oversee the Human Resources Development (HRD) and Research & Development (RnD) subdivisions to ensure organizational growth and innovation. I design and lead Knowledge Management programs that equip members with the skills and resources needed for effective regeneration and leadership. Additionally, I ensure the adoption of up-to-date technologies and internal systems that improve accessibility, collaboration, and long-term sustainability, enabling BNCC to maximize its impact on members and the broader community.</p>
+                    </div>
+                    <div class="experience-dot"></div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3>Project Manager & UI/UX Designer</h3>
+                        <div class="experience-company">Technology Project Member at BNCC</div>
+                        <div class="experience-period">2023-2024</div>
+                        <p class="experience-description">As a Project Manager and UI/UX Designer, I was responsible for leading the development and maintenance of an event website, ensuring seamless collaboration across teams to deliver features on time. I designed and implemented new user-centric features to enhance usability and engagement, while also optimizing the existing codebase for improved performance and scalability. My role combined strategic planning, creative design, and technical problem-solving to provide both functional efficiency and an intuitive user experience.</p>
+                    </div>
+                    <div class="experience-dot"></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-wrapper">
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <h4>Email</h4>
+            <p>fidelis.marcelino03@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <h4>Phone</h4>
+            <p>+62 0813 4306 7760</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required placeholder="Input your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" required placeholder="Input your email">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" required placeholder="Input your message"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        
+    </footer> 
+
+    <script src="script.js"></script>
+</body>
+</html>
+                    
