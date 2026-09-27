@@ -31,7 +31,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
   emailjs.send("service_i4gpg7q", "template_nuape7q", {
     from_name: name,
-    reply_to: email, 
+    name: name,
+    email: email,
+    reply_to: email,
+    title: "New message from " + name,
+    time: new Date().toLocaleString(),
     message: message,
   }).then(
     function(response) {
@@ -46,8 +50,56 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   );
 });
 
-// Hamburger menu toggle
-document.getElementById('hamburger').addEventListener('click', function() {
-  const navList = document.querySelector('#navbar ul');
-  navList.classList.toggle('active');
+// Dark mode toggle
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+
+themeToggle.setAttribute('aria-pressed', rootEl.getAttribute('data-theme') === 'dark');
+
+themeToggle.addEventListener('click', function() {
+  const nextTheme = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  rootEl.setAttribute('data-theme', nextTheme);
+  themeToggle.setAttribute('aria-pressed', nextTheme === 'dark');
+  localStorage.setItem('theme', nextTheme);
 });
+
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navList = document.querySelector('#navbar ul');
+
+hamburger.addEventListener('click', function() {
+  navList.classList.toggle('active');
+  hamburger.classList.toggle('open');
+});
+
+navList.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navList.classList.remove('active');
+    hamburger.classList.remove('open');
+  });
+});
+
+// Navbar background on scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Reveal-on-scroll for cards and timeline items
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('.reveal');
+
+if (reduceMotion || !('IntersectionObserver' in window)) {
+  revealEls.forEach(function(el) { el.classList.add('is-visible'); });
+} else {
+  const revealObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(function(el) { revealObserver.observe(el); });
+}

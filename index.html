@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front End Developer Portfolio</title>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -11,19 +21,25 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="logo">Fidelis Marcelino</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="logo"><span class="logo-bracket">&lt;</span>Fidelis Marcelino<span class="logo-bracket">/&gt;</span></div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <div class="mobile-menu" id="hamburger" role="button" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -33,16 +49,21 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="hero-badge mono">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="tok-kw">const</span>&nbsp;role&nbsp;=&nbsp;<span class="tok-str">"Front-End Developer &amp; UI/UX Designer"</span>;
+                        <span class="cursor-blink"></span>
+                    </div>
                     <h1>Hi, I'm Fidelis Marcelino</h1>
-                    <p class="title">Front End Developer & UI/UX Designer</p>
-                    <p>I craft beautiful, responsive websites and web applications that deliver exceptional user experiences. Passionate about clean code and modern design.</p>
+                    <p class="hero-desc">I craft beautiful, responsive websites and web applications that deliver exceptional user experiences. Passionate about clean code and modern design.</p>
                     <div class="hero-buttons">
-                        <a href="https://drive.google.com/file/d/1VOkKMEbPG8kDwM0YqdkGpL1q0yKl0hqU/view?usp=sharing" target="_blank" class="btn btn-primary">CV</a>
+                        <a href="https://drive.google.com/file/d/1VOkKMEbPG8kDwM0YqdkGpL1q0yKl0hqU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download CV</a>
+                        <a href="#projects" class="btn btn-outline">View My Work</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-circle">
-                        <img src="Image/Fidelis Marcelino.png" alt="">
+                        <img src="Image/Fidelis Marcelino.png" alt="Fidelis Marcelino">
                     </div>
                 </div>
             </div>
@@ -52,21 +73,16 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
+            <span class="section-eyebrow">// 01 About</span>
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <h3>Passionate Developer, Creative Thinker</h3>
-                    <p>I design beautiful and responsive websites and web applications that deliver an exceptional user experience, driven by a passion for clean code and modern design. 
+                    <p>I design beautiful and responsive websites and web applications that deliver an exceptional user experience, driven by a passion for clean code and modern design.
                     </p>
-                    <p>As a fifth semester Computer Science student, I bring <span>strong adaptability, teamwork, and leadership</span> experience as Chief Internal Officer at the Bina Nusantara Computer Club (BNCC).
+                    <p>As Computer Science undergraduate student, I bring <span>strong adaptability, teamwork, and leadership</span> experience as Chief Internal Officer at the Bina Nusantara Computer Club (BNCC).
                     </p>
                     <p>Dedicated to developing impactful digital solutions as a <span>Front-End Developer</span>, I am passionate about applying my technical and organizational skills in designing projects that promote collaboration, scalability, and user-oriented design.</p>
-                    <!-- <div class="social-links">
-                        <a href="#" class="social-link">💼</a>
-                        <a href="#" class="social-link">🐙</a>
-                        <a href="#" class="social-link">🐦</a>
-                        <a href="#" class="social-link">📧</a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -75,9 +91,10 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
+            <span class="section-eyebrow">// 02 Skills</span>
             <h2 class="section-title">My Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category reveal">
                     <div class="skill-icon">💻</div>
                     <h3>Frontend Development</h3>
                     <div class="skill-items">
@@ -87,7 +104,7 @@
                         <span class="skill-tag">React JS</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category reveal">
                     <div class="skill-icon">🎨</div>
                     <h3>Design & Styling</h3>
                     <div class="skill-items">
@@ -96,7 +113,7 @@
                         <span class="skill-tag">Bootstrap</span>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category reveal">
                     <div class="skill-icon">🛠️</div>
                     <h3>Tools & Technologies</h3>
                     <div class="skill-items">
@@ -113,122 +130,174 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
+            <span class="section-eyebrow">// 03 Projects</span>
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+
+                <!-- CAteriNgz -->
+                <article class="project-card reveal">
                     <div class="project-image">
-                        <img src="Image/CAteriNgz.png" alt="" style="width: 90%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/FidelisMarcelino/CAteriNgz" target="_blank" class="project-link">🔗</a>
-                            <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a>
-                        </div>
+                        <img src="Image/CAteriNgz.png" alt="CAteriNgz project preview">
                     </div>
-                    <div class="project-content">
-                        <h3>CAteriNgz | 2024</h3>
-                        <h4>Front-End Developer</h4>
-                        <p>A fully responsive online catering platform offering a variety of delicious meal packages, equipped with user authentication for a personalized experience.</p>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>CAteriNgz</h3>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <p class="project-role">Front-End Developer</p>
+                        <p class="project-desc">A fully responsive online catering platform offering a variety of delicious meal packages, equipped with user authentication for a personalized experience.</p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Image/PuddingFest.png" alt="" style="width: 90%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/FidelisMarcelino/FinalProjectLnTFE" target="_blank" class="project-link">🔗</a>
-                            <a href="https://fidelismarcelino.github.io/FinalProjectLnTFE/" target="_blank" class="project-link">🐙</a>
+                        <div class="project-actions">
+                            <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                View Live Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                            <a href="https://github.com/FidelisMarcelino/CAteriNgz" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View CAteriNgz source code on GitHub">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.84 3.14 8.94 7.49 10.39.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.05.66-3.7-1.3-3.7-1.3-.5-1.27-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.05 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A10.52 10.52 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+                                Code
+                            </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>PuddingFest Event | 2024</h3>
-                        <h4>Front-End Developer</h4>
-                        <p>PuddingFest is a responsive event website that features event summaries, the history of the event, and a timeline of activities to provide an intuitive user experience.</p>
+                </article>
+
+                <!-- PuddingFest -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Image/PuddingFest.png" alt="PuddingFest Event project preview">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>PuddingFest Event</h3>
+                            <span class="project-year">2024</span>
+                        </div>
+                        <p class="project-role">Front-End Developer</p>
+                        <p class="project-desc">PuddingFest is a responsive event website that features event summaries, the history of the event, and a timeline of activities to provide an intuitive user experience.</p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Image/WorldUniversity.png" alt="" style="width: 90%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/FidelisMarcelino/WorldUniversity" target="_blank" class="project-link">🔗</a>
-                            <a href="https://world-university-gold.vercel.app/" target="_blank" class="project-link">🐙</a>
+                        <div class="project-actions">
+                            <a href="https://fidelismarcelino.github.io/FinalProjectLnTFE/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                View Live Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                            <a href="https://github.com/FidelisMarcelino/FinalProjectLnTFE" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View PuddingFest Event source code on GitHub">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.84 3.14 8.94 7.49 10.39.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.05.66-3.7-1.3-3.7-1.3-.5-1.27-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.05 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A10.52 10.52 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+                                Code
+                            </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>World University | 2025</h3>
-                        <h4>Front-End Developer</h4>
-                        <p>World University is a responsive web application built with React JavaScript and Tailwind CSS that provides comprehensive data on all countries around the world.</p>
+                </article>
+
+                <!-- World University -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Image/WorldUniversity.png" alt="World University project preview">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>World University</h3>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <p class="project-role">Front-End Developer</p>
+                        <p class="project-desc">World University is a responsive web application built with React JavaScript and Tailwind CSS that provides comprehensive data on all countries around the world.</p>
                         <div class="project-tags">
                             <span class="tag">React JS</span>
                             <span class="tag">Tailwind CSS</span>
                             <span class="tag">API</span>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Image/BOS 2024.png" alt="" style="width: 80%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <!-- <a href="https://www.instagram.com/technoscapebncc/" target="_blank" class="project-link">🔗</a> -->
-                            <!-- <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a> -->
+                        <div class="project-actions">
+                            <a href="https://world-university-gold.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                View Live Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                            <a href="https://github.com/FidelisMarcelino/WorldUniversity" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View World University source code on GitHub">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.84 3.14 8.94 7.49 10.39.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.05.66-3.7-1.3-3.7-1.3-.5-1.27-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.05 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A10.52 10.52 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+                                Code
+                            </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>BNCC Opening Season 2024</h3>
-                        <h4>Staff Design & Documentation Division</h4>
-                        <p>BNCC Opening Season 2024 is a creative project where I created Instagram content and motion graphics using Adobe After Effects to create a cohesive and attractive visual identity for the event.</p>
+                </article>
+
+                <!-- BNCC Opening Season 2024 -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Image/BOS 2024.png" alt="BNCC Opening Season 2024 project preview">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>BNCC Opening Season 2024</h3>
+                        </div>
+                        <p class="project-role">Staff Design &amp; Documentation Division</p>
+                        <p class="project-desc">BNCC Opening Season 2024 is a creative project where I created Instagram content and motion graphics using Adobe After Effects to create a cohesive and attractive visual identity for the event.</p>
                         <div class="project-tags">
                             <span class="tag">Figma</span>
                             <span class="tag">Adobe After Effect</span>
                             <span class="tag">Adobe Premiere Pro</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+
+                <!-- TechnoScape 2025 -->
+                <article class="project-card reveal">
                     <div class="project-image">
-                        <img src="Image/TechnoScape 2025.png" alt="" style="width: 80%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <a href="https://www.instagram.com/technoscapebncc/" target="_blank" class="project-link">🔗</a>
-                            <!-- <a href="https://fidelismarcelino.github.io/CAteriNgz/" target="_blank" class="project-link">🐙</a> -->
-                        </div>
+                        <img src="Image/TechnoScape 2025.png" alt="TechnoScape 2025 project preview">
                     </div>
-                    <div class="project-content">
-                        <h3>TechnoScape 2025</h3>
-                        <h4>Vice Coordinator Design & Documentation Division | UI/UX Designer</h4>
-                        <p>TechnoScape 2025 is a creative project where I designed the website, Instagram content, and motion graphics using Adobe After Effects to create a cohesive and appealing visual identity for the events.</p>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>TechnoScape 2025</h3>
+                        </div>
+                        <p class="project-role">Vice Coordinator Design &amp; Documentation Division | UI/UX Designer</p>
+                        <p class="project-desc">TechnoScape 2025 is a creative project where I designed the website, Instagram content, and motion graphics using Adobe After Effects to create a cohesive and appealing visual identity for the events.</p>
                         <div class="project-tags">
                             <span class="tag">Figma</span>
                             <span class="tag">Adobe After Effect</span>
                             <span class="tag">Adobe Premiere Pro</span>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Image/Weather App.png" alt="" style="width: 90%; border-radius: 4px;">
-                        <div class="project-overlay">
-                            <a href="https://github.com/FidelisMarcelino/WeatherApp" target="_blank" class="project-link">🔗</a>
-                            <a href="https://weather-app-two-blue-jym558wp3q.vercel.app/" target="_blank" class="project-link">🐙</a>
+                        <div class="project-actions">
+                            <a href="https://www.instagram.com/technoscapebncc/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                View on Instagram
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Weather App | 2025</h3>
-                        <h4>Front-End Developer</h4>
-                        <p>Weather App is a responsive web application built with React JavaScript and Tailwind CSS that provides real-time global weather data and forecasts. It features current weather conditions, hourly predictions, and three-day forecasts, offering users clear and accessible insights into upcoming weather patterns.</p>
+                </article>
+
+                <!-- Weather App -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Image/Weather App.png" alt="Weather App project preview">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-heading">
+                            <h3>Weather App</h3>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <p class="project-role">Front-End Developer</p>
+                        <p class="project-desc">Weather App is a responsive web application built with React JavaScript and Tailwind CSS that provides real-time global weather data and forecasts. It features current weather conditions, hourly predictions, and three-day forecasts, offering users clear and accessible insights into upcoming weather patterns.</p>
                         <div class="project-tags">
                             <span class="tag">React JS</span>
                             <span class="tag">Tailwind CSS</span>
                             <span class="tag">API</span>
                         </div>
+                        <div class="project-actions">
+                            <a href="https://weather-app-two-blue-jym558wp3q.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                View Live Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </a>
+                            <a href="https://github.com/FidelisMarcelino/WeatherApp" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View Weather App source code on GitHub">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.84 3.14 8.94 7.49 10.39.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.05.66-3.7-1.3-3.7-1.3-.5-1.27-1.22-1.6-1.22-1.6-.99-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.69-1.48-2.44-.28-5-1.22-5-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.57 5.15-5.02 5.42.39.34.74 1.02.74 2.05 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A10.52 10.52 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+                                Code
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -236,80 +305,85 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
+            <span class="section-eyebrow">// 04 Experience</span>
             <h2 class="section-title">My Experience</h2>
             <div class="experience-timeline">
-                <div class="experience-item">
+                <div class="experience-item reveal">
+                    <div class="experience-dot"></div>
+                    <span class="experience-period">2025</span>
                     <div class="experience-content">
-                        <h3>Project Manager & UI/UX Designer</h3>
+                        <h3>Project Manager &amp; UI/UX Designer</h3>
                         <div class="experience-company">readopt</div>
-                        <div class="experience-period">2025 - Present</div>
                         <p class="experience-description">As a Project Manager and UI/UX Designer, I led the development and maintenance of a used book marketplace website by ensuring smooth team collaboration so that every feature could be released on time. I design and implement new user-focused features to enhance comfort and engagement, while optimizing the existing code base for greater efficiency and scalability. This role combines strategic planning, creative design, and technical problem-solving to deliver an intuitive user experience and reliable system performance.</p>
                     </div>
-                    <div class="experience-dot"></div>
                 </div>
-                <div class="experience-item">
+                <div class="experience-item reveal">
+                    <div class="experience-dot"></div>
+                    <span class="experience-period">2024 - 2025</span>
                     <div class="experience-content">
                         <h3>Chief Internal Officer</h3>
-                        <div class="experience-company">BNCC</div>
-                        <div class="experience-period">2024-2025</div>
+                        <div class="experience-company">Bina Nusantara Computer Club (BNCC)</div>
                         <p class="experience-description">As Chief Internal Officer at BNCC, I oversee the Human Resources Development (HRD) and Research & Development (RnD) subdivisions to ensure organizational growth and innovation. I design and lead Knowledge Management programs that equip members with the skills and resources needed for effective regeneration and leadership. Additionally, I ensure the adoption of up-to-date technologies and internal systems that improve accessibility, collaboration, and long-term sustainability, enabling BNCC to maximize its impact on members and the broader community.</p>
                     </div>
-                    <div class="experience-dot"></div>
                 </div>
-                <div class="experience-item">
+                <div class="experience-item reveal">
+                    <div class="experience-dot"></div>
+                    <span class="experience-period">2023 - 2024</span>
                     <div class="experience-content">
-                        <h3>Project Manager & UI/UX Designer</h3>
+                        <h3>Project Manager &amp; UI/UX Designer</h3>
                         <div class="experience-company">Technology Project Member at BNCC</div>
-                        <div class="experience-period">2023-2024</div>
                         <p class="experience-description">As a Project Manager and UI/UX Designer, I was responsible for leading the development and maintenance of an event website, ensuring seamless collaboration across teams to deliver features on time. I designed and implemented new user-centric features to enhance usability and engagement, while also optimizing the existing codebase for improved performance and scalability. My role combined strategic planning, creative design, and technical problem-solving to provide both functional efficiency and an intuitive user experience.</p>
                     </div>
-                    <div class="experience-dot"></div>
                 </div>
-                
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-wrapper">
-        
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-item-icon">📧</div>
-            <h4>Email</h4>
-            <p>fidelis.marcelino03@gmail.com</p>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">📱</div>
-            <h4>Phone</h4>
-            <p>+62 0813 4306 7760</p>
-          </div>
+    <section id="contact">
+        <div class="container">
+            <span class="section-eyebrow">// 05 Contact</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>fidelis.marcelino03@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+62 0813 4306 7760</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="Input your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required placeholder="Input your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required placeholder="Input your message"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
-
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" required placeholder="Input your name">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" required placeholder="Input your email">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" required placeholder="Input your message"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
     <!-- FOOTER -->
@@ -318,18 +392,18 @@
             <div class="footer-section">
                 <h3 class="footer-logo">Fidelis Marcelino</h3>
                 <p class="footer-description">Front-End Developer passionate about creating beautiful and functional web experiences.</p>
-                
+
                 <div class="footer-social">
-                    <a href="https://github.com/FidelisMarcelino" target="_blank" class="footer-social-link" aria-label="GitHub">
-                        <img src="Image/github.png" alt="GitHub" class="footer-social-icon" style="width: 24px; height: auto;"> <i class="bi bi-github"></i>
+                    <a href="https://github.com/FidelisMarcelino" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+                        <img src="Image/github.png" alt="">
                     </a>
 
-                    <a href="https://www.linkedin.com/in/fidelis-marcelino/" target="_blank" class="footer-social-link" aria-label="GitHub">
-                        <img src="Image/linkedin.png" alt="GitHub" class="footer-social-icon w-24 h-24" style="width: 24px; height: auto;">
+                    <a href="https://www.linkedin.com/in/fidelis-marcelino/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                        <img src="Image/linkedin.png" alt="">
                     </a>
 
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fidelis.marcelino03@gmail.com&su=Halo+Fidelis&body=Isi+pesan+di+sini" target="_blank" class="footer-social-link" aria-label="GitHub">
-                        <img src="Image/gmail.png" alt="GitHub" class="footer-social-icon w-24 h-24" style="width: 24px; height: auto;">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fidelis.marcelino03@gmail.com&su=Halo+Fidelis&body=Isi+pesan+di+sini" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Email">
+                        <img src="Image/gmail.png" alt="">
                     </a>
                 </div>
             </div>
@@ -339,8 +413,8 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="skills">Skills</a></li>
-                    <li><a href="projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
             </div>
 
@@ -358,11 +432,10 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy: 2025 Fidelis Marcelino. All right reserved.</p>
+            <p>&copy; 2025 Fidelis Marcelino. All rights reserved.</p>
         </div>
-    </footer> 
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
-                    
