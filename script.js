@@ -85,6 +85,80 @@ window.addEventListener('scroll', function() {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
 
+// Project details modal (used on small screens where the full description is hidden)
+const projectModal = document.getElementById('projectModal');
+const projectModalTitle = projectModal.querySelector('#projectModalTitle');
+const projectModalSubtitle = projectModal.querySelector('.project-modal-subtitle');
+const projectModalDesc = projectModal.querySelector('.project-modal-desc');
+const projectModalTags = projectModal.querySelector('.project-modal-tags');
+let lastFocusedDetailsBtn = null;
+
+function openDetailsModal(titleText, subtitleText, descText, tagsHtml, triggerBtn) {
+  projectModalTitle.textContent = titleText || '';
+  projectModalSubtitle.textContent = subtitleText || '';
+  projectModalDesc.textContent = descText || '';
+  projectModalTags.innerHTML = tagsHtml || '';
+
+  lastFocusedDetailsBtn = triggerBtn;
+  projectModal.classList.add('is-open');
+  projectModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  projectModal.querySelector('.project-modal-close').focus();
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove('is-open');
+  projectModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (lastFocusedDetailsBtn) {
+    lastFocusedDetailsBtn.focus();
+  }
+}
+
+document.querySelectorAll('.project-details-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const card = btn.closest('.project-card');
+    if (!card) return;
+    const title = card.querySelector('.project-heading h3');
+    const desc = card.querySelector('.project-desc');
+    const tags = card.querySelector('.project-tags');
+    openDetailsModal(
+      title ? title.textContent : '',
+      '',
+      desc ? desc.textContent : '',
+      tags ? tags.innerHTML : '',
+      btn
+    );
+  });
+});
+
+document.querySelectorAll('.experience-details-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = btn.closest('.experience-item');
+    if (!item) return;
+    const title = item.querySelector('.experience-content h3');
+    const company = item.querySelector('.experience-company');
+    const desc = item.querySelector('.experience-description');
+    openDetailsModal(
+      title ? title.textContent : '',
+      company ? company.textContent : '',
+      desc ? desc.textContent : '',
+      '',
+      btn
+    );
+  });
+});
+
+projectModal.querySelectorAll('[data-modal-close]').forEach(function(el) {
+  el.addEventListener('click', closeProjectModal);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
+    closeProjectModal();
+  }
+});
+
 // Reveal-on-scroll for cards and timeline items
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealEls = document.querySelectorAll('.reveal');
